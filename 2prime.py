@@ -1,4 +1,4 @@
-for num in range(10, 100):         
+for num in range(10, 100):    
     is_prime = True
 
     for i in range(2, int(num ** 0.5) + 1):
