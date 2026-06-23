@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ultimate AI</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        #chatbox {
+            width: 60%;
+            height: 400px;
+            margin: auto;
+            overflow-y: scroll;
+            border: 1px solid #444;
+            padding: 10px;
+            background: #1e293b;
+        }
+
+        input {
+            width: 50%;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🤖 Ultimate AI</h1>
+
+<div id="chatbox"></div>
+
+<br>
+
+<input id="input" placeholder="Type message...">
+<button onclick="send()">Send</button>
+
+<script>
+async function send() {
+    let input = document.getElementById("input");
+    let message = input.value;
+
+    if (!message) return;
+
+    let chatbox = document.getElementById("chatbox");
+
+    chatbox.innerHTML += "<p><b>You:</b> " + message + "</p>";
+
+    input.value = "";
+
+    let response = await fetch("/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: message })
+    });
+
+    let data = await response.json();
+
+    chatbox.innerHTML += "<p><b>AI:</b> " + data.reply + "</p>";
+
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+</script>
+
+</body>
+</html>
