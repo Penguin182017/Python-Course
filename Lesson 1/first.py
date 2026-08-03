@@ -227,7 +227,16 @@ while True:
             break
 
     elif current_room == 'treasure room':
-        print("When you opened the door you find a giant room full of treasures it feels like heaven but in the middle of the room lays an enourmous res fire-breathing dragon")
+        print("When you opened the door you find a giant room full of treasures it feels like heaven but in the middle of the room lays an enourmous res fire-breathing dragon\nOptions\n1. try to steal a gem\n2. stuff as much treasure into your pants\n3. leave as fast as possible\n4. quit")
+        choice = input("What do you want to do?: ")
+
+        if choice == '1':
+            print("While taking the gem an alarm sets off and the dragon wakes up and burns you to death")
+
+        if choice == '2':
+            print("When putting the treasurs in to your pants they fall out waking up the dragon and the dragon burns you to death")
+
+        
 
 
 
