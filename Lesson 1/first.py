@@ -222,6 +222,7 @@ while True:
 
         if choice == "2":
             print("While trying to break the door you slipped over a banana peel and broke your shoulder")
+            break
 
         if choice == "3":
             break
@@ -232,22 +233,32 @@ while True:
 
         if choice == '1':
             print("While taking the gem an alarm sets off and the dragon wakes up and burns you to death")
+            break
 
         if choice == '2':
             print("When putting the treasurs in to your pants they fall out waking up the dragon and the dragon burns you to death")
+            break
 
-        
+        if choice == '3':
+            print("You run out of the room as fast as you can and you opened a secret door leading to a bright light ")
+            current_room = "victory room"
 
+        if choice == '4':
+            break
 
+    elif current_room == "victory room":
+        print("you walk into the bright light and you find yourself in a room full of an army of tuxedoed penguins\nOptions\n1. party with the penguins\n2. ask the penguins for help\n3. quit")
+        choice = input("What do you want to do?: ")
 
+        if choice == "1":
+            print("You party with the penguins and they give you a lifetime supply of fish and you live happily ever after stuck in that room with the penguins")
+            break
 
+        if choice == "2":
+            print("The penguins help you escape the room and you find yourself in a bright sunny field and you find your way home and you live happily ever after")
+            break
 
+        if choice == "3":
+            break
 
-
-
-    
-
-
-
-
-
+print("Thanks for playing!")
