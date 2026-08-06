@@ -207,58 +207,95 @@
 # turtle.done()
 
 # adventure
-inventory = []
-current_room = "dungeon"
+# 
+# inventory = []
+# current_room = "dungeon"
 
-while True:
-    if current_room == "dungeon":
-        print("You are in a dark, cold dungeon. There is a hevy wooden door to your NORTH and a shiny key on the floor.\n1. pick up the key and open the door\n2. break the door\n3. quit")
-        choice = input("What do you want to do?: ")
+# while True:
+#     if current_room == "dungeon":
+#         print("You are in a dark, cold dungeon. There is a hevy wooden door to your NORTH and a shiny key on the floor.\n1. pick up the key and open the door\n2. break the door\n3. quit")
+#         choice = input("What do you want to do?: ")
 
-        if choice == "1":
-            inventory.append("key")
-            print("You open the door and find a dragon sleeping in a pile of treasure")
-            current_room = "treasure room"
+#         if choice == "1":
+#             inventory.append("key")
+#             print("You open the door and find a dragon sleeping in a pile of treasure")
+#             current_room = "treasure room"
 
-        if choice == "2":
-            print("While trying to break the door you slipped over a banana peel and broke your shoulder")
-            break
+#         if choice == "2":
+#             print("While trying to break the door you slipped over a banana peel and broke your shoulder")
+#             break
 
-        if choice == "3":
-            break
+#         if choice == "3":
+#             break
 
-    elif current_room == 'treasure room':
-        print("When you opened the door you find a giant room full of treasures it feels like heaven but in the middle of the room lays an enourmous res fire-breathing dragon\nOptions\n1. try to steal a gem\n2. stuff as much treasure into your pants\n3. leave as fast as possible\n4. quit")
-        choice = input("What do you want to do?: ")
+#     elif current_room == 'treasure room':
+#         print("When you opened the door you find a giant room full of treasures it feels like heaven but in the middle of the room lays an enourmous res fire-breathing dragon\nOptions\n1. try to steal a gem\n2. stuff as much treasure into your pants\n3. leave as fast as possible\n4. quit")
+#         choice = input("What do you want to do?: ")
 
-        if choice == '1':
-            print("While taking the gem an alarm sets off and the dragon wakes up and burns you to death")
-            break
+#         if choice == '1':
+#             print("While taking the gem an alarm sets off and the dragon wakes up and burns you to death")
+#             break
 
-        if choice == '2':
-            print("When putting the treasurs in to your pants they fall out waking up the dragon and the dragon burns you to death")
-            break
+#         if choice == '2':
+#             print("When putting the treasurs in to your pants they fall out waking up the dragon and the dragon burns you to death")
+#             break
 
-        if choice == '3':
-            print("You run out of the room as fast as you can and you opened a secret door leading to a bright light ")
-            current_room = "victory room"
+#         if choice == '3':
+#             print("You run out of the room as fast as you can and you opened a secret door leading to a bright light ")
+#             current_room = "victory room"
 
-        if choice == '4':
-            break
+#         if choice == '4':
+#             break
 
-    elif current_room == "victory room":
-        print("you walk into the bright light and you find yourself in a room full of an army of tuxedoed penguins\nOptions\n1. party with the penguins\n2. ask the penguins for help\n3. quit")
-        choice = input("What do you want to do?: ")
+#     elif current_room == "victory room":
+#         print("you walk into the bright light and you find yourself in a room full of an army of tuxedoed penguins\nOptions\n1. party with the penguins\n2. ask the penguins for help\n3. quit")
+#         choice = input("What do you want to do?: ")
 
-        if choice == "1":
-            print("You party with the penguins and they give you a lifetime supply of fish and you live happily ever after stuck in that room with the penguins")
-            break
+#         if choice == "1":
+#             print("You party with the penguins and they give you a lifetime supply of fish and you live happily ever after stuck in that room with the penguins")
+#             break
 
-        if choice == "2":
-            print("The penguins help you escape the room and you find yourself in a bright sunny field and you find your way home and you live happily ever after")
-            break
+#         if choice == "2":
+#             print("The penguins help you escape the room and you find yourself in a bright sunny field and you find your way home and you live happily ever after")
+#             break
 
-        if choice == "3":
-            break
+#         if choice == "3":
+#             break
 
-print("Thanks for playing!")
+# print("Thanks for playing!")
+
+
+
+
+# password 
+password = input("enter a password: ")
+score = 0
+
+if len(password) >= 8:
+    score += 1
+    print("score: ", score)
+
+else:
+    print("sorry, your password needs to be changed!")
+
+has_lower = False
+
+for char in password:
+    if char.islower():
+        has_lower = True
+
+has_upper = False
+
+for char in password:
+    if char.isupper():
+        has_upper = True
+
+if has_lower and has_upper:
+    score += 1
+
+has_digit = False
+
+for char in password:
+    if char.isdigit():
+        has_digit = True 
+
