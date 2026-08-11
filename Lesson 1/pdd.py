@@ -84,3 +84,4 @@ df_cleaned["Average"] = df_cleaned["Total"] / 2
 
 print("DataFrame with Total and Average Columns:")
 print(df_cleaned)
+
