@@ -32,3 +32,5 @@ plt.title("Weekly Savings Comparison")
 plt.xlabel("Weeks")
 plt.ylabel("Savings ($)")
 plt.legend()
+
+plt.show()
