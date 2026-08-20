@@ -1,5 +1,6 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
 
 penguins = ['Pip', 'Bobo', 'Kiko', 'Pingu', 'Snowy', 'Ice']
 weight = [3.2, 4.1, 5.0, 3.8, 4.5, 5.3]
@@ -7,7 +8,7 @@ flipper = [180, 190, 205, 185, 198, 215]
 species = ['Small', 'Medium', 'Large',
            'Small', 'Medium', 'Large']
 
-
+# scatter plot
 sns.scatterplot(x=weight, y=flipper, hue=species)
 plt.title("Penguin Size Groups")
 plt.xlabel("Weight (kg)")
@@ -19,6 +20,7 @@ plt.show()
 penguins = ['Pip', 'Bobo', 'Kiko']
 fish = [12, 8, 15]
 
+# bar plot
 sns.barplot(x=penguins, y=fish)
 
 plt.xlabel("Penguins")
@@ -109,6 +111,7 @@ weight = [3.2, 4.1, 5.0, 3.8, 4.5, 5.3]
 
 flipper = [180, 190, 205, 185, 198, 215]
 
+# scatter plot
 sns.scatterplot(
     x=weight,
     y=flipper,
@@ -128,6 +131,7 @@ weight = [3.2, 4.1, 5.0, 3.8, 4.5, 5.3]
 
 flipper = [180, 190, 205, 185, 198, 215]
 
+# reg plot
 sns.regplot(x=weight, y=flipper)
 
 plt.title("Penguin Weight vs Flipper Length")
@@ -137,3 +141,60 @@ plt.grid(True)
 plt.ylim(170, 220)
 
 plt.show()
+
+# heatmap
+data = {
+    'Weight': [3.2, 4.1, 5.0, 3.8, 4.5, 5.3],
+    'Flipper': [180, 190, 205, 185, 198, 215],
+    'Age': [2, 3, 5, 3 , 4, 6], 
+    'Swimming': [70, 80, 95, 75, 88, 100]
+}
+df = pd.DataFrame(data)
+correlation = df.corr()
+sns.heatmap(correlation, annot=False, linewidth=1)
+plt.title('🐧 Advanced Penguin Analysis')
+plt.show()
+
+data = {
+    'Name': ['Pip', 'Bobo', 'Kiko', 'Pingu', 'Snowy', 'Ice'],
+    'Weight': [3.2, 4.1, 5.0, 3.8, 4.5, 5.3],
+    'Flipper': [180, 190, 205, 185, 198, 215],
+    'Age': [2, 3, 5, 3 , 4, 6]
+}
+df = pd.DataFrame(data)
+
+# pair plot
+sns.pairplot(df, kind='reg')
+
+plt.show()
+
+#box plot
+sns.boxplot(
+    data=df,
+    x='Age',
+    y='Weight'
+)
+
+plt.show()
+
+# violin plot
+sns.violinplot(
+    data=df,
+    x='Age',
+    y='Weight'
+)
+plt.show()
+
+# joint plot
+sns.jointplot(
+    data=df,
+    x='Weight',
+    y='Flipper',
+    kind='kde'
+)
+
+plt.show()
+
+fig, axes = plt.subplots(2, 2)
+
+sns.scatterplot(data=df, x='Weight', y='Flipper', ax=axes[0, 0])
