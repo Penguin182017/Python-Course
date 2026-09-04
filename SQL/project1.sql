@@ -1,37 +1,146 @@
-CREATE TABLE IF NOT EXISTS Salesman (
-    Salesman_id TEXT PRIMARY KEY,
-    name TEXT,
-    city TEXT,
-    Comission REAL
+-- =========================================
+-- 1. DELETE OLD TABLE
+-- =========================================
+
+DROP TABLE IF EXISTS Employees;
+
+
+-- =========================================
+-- 2. CREATE THE EMPLOYEES TABLE
+-- =========================================
+
+CREATE TABLE Employees (
+    Employee_id INTEGER PRIMARY KEY,
+    Name TEXT,
+    Department TEXT,
+    Job_title TEXT,
+    Salary REAL,
+    City TEXT
 );
 
-INSERT INTO Salesman (Salesman_id, name, city, Comission) VALUES
-('5001', 'James Hoog', 'New York', 0.15),
-('5002', 'Nail Knite', 'Paris', 0.13),
-('5005', 'Pit Alex', 'London', 0.11),
-('5006', 'Mc Lyon', 'Paris', 0.14),
-('5007', 'Paul Adam', 'Rome', 0.13),
-('5003', 'Lauson Hen', 'San Jose', 0.12);
 
-SELECT * FROM Salesman;
+-- =========================================
+-- 3. INSERT EMPLOYEE DATA
+-- =========================================
 
-CREATE TABLE IF NOT EXISTS Orders (
-    ord_no TEXT PRIMARY KEY,
-    purch_amt REAL,
-    ord_date TEXT,
-    customer_id TEXT,
-    Salesman_id TEXT
-);
+INSERT INTO Employees
+(Employee_id, Name, Department, Job_title, Salary, City)
+VALUES
+(101, 'John Smith', 'IT', 'Software Developer', 5500, 'Kuala Lumpur'),
+(102, 'Sarah Lee', 'HR', 'HR Manager', 6200, 'Penang'),
+(103, 'David Kumar', 'Finance', 'Accountant', 5800, 'Kuala Lumpur'),
+(104, 'Emma Wilson', 'IT', 'Data Analyst', 6000, 'Johor Bahru'),
+(105, 'Michael Tan', 'Sales', 'Sales Executive', 4500, 'Kuala Lumpur'),
+(106, 'Sophia Lim', 'Finance', 'Financial Analyst', 6500, 'Penang'),
+(107, 'Daniel Wong', 'IT', 'System Administrator', 5700, 'Malacca'),
+(108, 'Olivia Chen', 'Sales', 'Sales Manager', 7000, 'Kuala Lumpur');
 
-INSERT INTO Orders (ord_no, purch_amt, ord_date, customer_id, Salesman_id) VALUES
-('70001', 150.5, '2012-10-05', '3005', '5002'),
-('70009', 270.65, '2012-09-10', '3001', '5001'),
-('70002', 65.26, '2012-10-05', '3002', '5003'),
-('70004', 110.5, '2012-08-17', '3009', '5007'),
-('70007', 948.5, '2012-09-10', '3005', '5005'),
-('70005', 2400.6, '2012-07-27', '3007', '5006');
 
-SELECT * FROM Orders;
+-- =========================================
+-- 4. DISPLAY ALL EMPLOYEES
+-- =========================================
 
-SELECT name, Comission
-FROM Salesman;
+SELECT * FROM Employees;
+
+
+-- =========================================
+-- 5. DISPLAY ONLY NAMES
+-- =========================================
+
+SELECT Name
+FROM Employees;
+
+
+-- =========================================
+-- 6. DISPLAY NAMES AND DEPARTMENTS
+-- =========================================
+
+SELECT Name, Department
+FROM Employees;
+
+
+-- =========================================
+-- 7. FIND EMPLOYEES IN THE IT DEPARTMENT
+-- =========================================
+
+SELECT *
+FROM Employees
+WHERE Department = 'IT';
+
+
+-- =========================================
+-- 8. FIND EMPLOYEES IN FINANCE
+-- =========================================
+
+SELECT *
+FROM Employees
+WHERE Department = 'Finance';
+
+
+-- =========================================
+-- 9. FIND EMPLOYEES FROM KUALA LUMPUR
+-- =========================================
+
+SELECT *
+FROM Employees
+WHERE City = 'Kuala Lumpur';
+
+
+-- =========================================
+-- 10. FIND EMPLOYEES WITH SALARY ABOVE 6000
+-- =========================================
+
+SELECT *
+FROM Employees
+WHERE Salary > 6000;
+
+
+-- =========================================
+-- 11. SORT EMPLOYEES BY SALARY
+-- =========================================
+
+SELECT Name, Salary
+FROM Employees
+ORDER BY Salary DESC;
+
+
+-- =========================================
+-- 12. FIND THE HIGHEST-PAID EMPLOYEE
+-- =========================================
+
+SELECT Name, Salary
+FROM Employees
+ORDER BY Salary DESC
+LIMIT 1;
+
+
+-- =========================================
+-- 13. COUNT THE NUMBER OF EMPLOYEES
+-- =========================================
+
+SELECT COUNT(*) AS Total_Employees
+FROM Employees;
+
+
+-- =========================================
+-- 14. FIND THE AVERAGE SALARY
+-- =========================================
+
+SELECT AVG(Salary) AS Average_Salary
+FROM Employees;
+
+
+-- =========================================
+-- 15. FIND THE LOWEST SALARY
+-- =========================================
+
+SELECT MIN(Salary) AS Lowest_Salary
+FROM Employees;
+
+
+-- =========================================
+-- 16. FIND THE HIGHEST SALARY
+-- =========================================
+
+SELECT MAX(Salary) AS Highest_Salary
+FROM Employees;
