@@ -2,10 +2,10 @@ CREATE TABLE IF NOT EXISTS Salesman (
     Salesman_id TEXT PRIMARY KEY,
     name TEXT,
     city TEXT,
-    Commission REAL
+    Comission REAL
 );
 
-INSERT INTO Salesman (Salesman_id, name, city, Commission) VALUES
+INSERT INTO Salesman (Salesman_id, name, city, Comission) VALUES
 ('5001', 'James Hoog', 'New York', 0.15),
 ('5002', 'Nail Knite', 'Paris', 0.13),
 ('5005', 'Pit Alex', 'London', 0.11),
@@ -33,5 +33,5 @@ INSERT INTO Orders (ord_no, purch_amt, ord_date, customer_id, Salesman_id) VALUE
 
 SELECT * FROM Orders;
 
-SELECT name, Commission
+SELECT name, Comission
 FROM Salesman;
