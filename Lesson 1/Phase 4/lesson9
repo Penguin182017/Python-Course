@@ -1,0 +1,12 @@
+Hypothesis Testing
+
+Hypothesis testing helps scientists/data scientists answer questions like:
+
+"Is this difference actually meaningful, or could it have happened by chance?"
+
+We start with two ideas:
+
+Null hypothesis (H₀) → nothing special is happening.
+Alternative hypothesis (H₁) → something different is happening.
+
+We'll learn these properly in the next lessons. 🧠📊

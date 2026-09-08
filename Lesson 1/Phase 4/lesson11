@@ -1,0 +1,8 @@
+p-values
+
+A p-value helps us decide whether the result we found is strong enough to be considered statistically significant.
+
+A common rule is:
+
+p < 0.05 → statistically significant ✅
+p ≥ 0.05 → not statistically significant ❌

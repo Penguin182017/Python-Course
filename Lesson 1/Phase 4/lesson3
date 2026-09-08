@@ -1,0 +1,17 @@
+Standard Deviation
+
+Standard deviation also measures spread, but it's easier to interpret because it's in the same units as the original data.
+
+For example, if you're measuring penguin weight in kilograms, standard deviation is also measured in kilograms. 🐧
+
+Standard deviation = how far values typically are from the mean.
+
+For example:
+
+9, 10, 11
+
+Mean = 10, and the values are very close → small standard deviation.
+
+2, 10, 18
+
+Mean = 10, but the values are far away → large standard deviation.

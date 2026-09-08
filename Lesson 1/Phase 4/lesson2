@@ -1,0 +1,28 @@
+Range
+
+The range tells us how far apart the smallest and largest values are.
+
+2, 3, 3, 5, 7
+
+Range = 7 - 2 = 5
+
+//
+Variance
+
+Variance tells us how spread out the numbers are around the mean.
+
+Now let's learn variance.
+
+For the numbers:
+
+2, 4, 6
+
+Mean = 4
+
+We look at how far each number is from the mean:
+
+2 → 2 away
+4 → 0 away
+6 → 2 away
+
+Variance uses these differences to measure how spread out the data is.

@@ -1,0 +1,15 @@
+Probability with Data
+
+We can calculate probability from actual data.
+
+Imagine we have 10 penguins:
+
+5 like fish 🐟
+3 like krill
+2 like squid
+
+The probability of randomly choosing a penguin that likes fish is:
+
+5 ÷ 10 = 0.5
+
+So there's a 50% probability.

@@ -1,0 +1,17 @@
+Normal Distribution
+
+A normal distribution is a pattern where most values are near the middle, and fewer values are at the extremes.
+
+It often looks like a bell:
+
+             *
+           *   *
+         *       *
+       *           *
+_____*_______________*____
+
+For example, imagine penguin weights:
+
+10  11  11  12  12  12  13  13  14
+
+Most are around 12, while fewer are near 10 or 14.
