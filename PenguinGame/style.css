@@ -1,0 +1,16 @@
+body {
+    background-color: turquoise;
+    
+}
+
+h1 {
+    color: goldenrod;
+    text-align: center;
+}
+
+#penguinButton {
+    background-color: turquoise;
+    padding: 10px;
+    font-size: xx-large;
+    border-color: turquoise;
+}
