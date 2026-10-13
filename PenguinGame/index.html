@@ -1,31 +1,75 @@
+
+<!DOCTYPE html>
+<html>
 <head>
+    <title>Penguin Clicker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<h1>Penguin Clicker</h1>
+<body>
 
-<p>Click the penguin to earn points!</p>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+    <div class="cloud cloud5"></div>
+    <div class="cloud cloud6"></div>
 
-<button id="penguinButton">🐧</button>
+    <div id="sun"></div>
 
-<p id="score">Score: 0</p>
+    <h1>🐧 Penguin Clicker</h1>
 
-<button id="upgradeButton">BUY FISH POWER = 10</button>
+    <p id="weather">☀️ Sunny — Common</p>
 
-<button id="babyPenguinButton">BUY BABY PENGUIN = 50</button>
+    <p>Click the penguin to earn fish!</p>
 
-<button id="fisherPenguinButton">BUY FISHER PENGUIN = 250</button>
+    <button id="penguinButton">🐧</button>
 
-<button id="fishingBoatButton">BUY FISHING BOAT = 1,000</button>
+    <p id="score">Fish: 0</p>
 
-<button id="penguinHutButton">BUY PENGUIN HUT = 5,000</button>
+    <p id="clickPower">Click Power: 1</p>
+    <p id="fishPerSecond">Fish Per Second: 0</p>
 
-<button id="fishFactoryButton">BUY FISH FACTORY = 25,000</button>
+    <h2>🛒 Shop</h2>
 
-<button id="penguinShipButton">BUY PENGUIN SHIP = 100,000</button>
+    <button id="upgradeButton">BUY FISH POWER = 10</button>
 
-<p id="clickPower">Click Power: 1</p>
+    <button id="babyPenguinButton">
+        BUY BABY PENGUIN = 50
+    </button>
 
-<p id="fishPerSecond">Fish Per Second: 0</p>
+    <button id="fisherPenguinButton">
+        BUY FISHER PENGUIN = 250
+    </button>
 
-<script src="game.js"></script>
+    <button id="fishingBoatButton">
+        BUY FISHING BOAT = 1,000
+    </button>
+
+    <button id="penguinHutButton">
+        BUY PENGUIN HUT = 5,000
+    </button>
+
+    <button id="fishFactoryButton">
+        BUY FISH FACTORY = 25,000
+    </button>
+
+    <button id="penguinShipButton">
+        BUY PENGUIN SHIP = 100,000
+    </button>
+
+    <button id="fishWarehouseButton">
+        BUY FISH WAREHOUSE = 500,000
+    </button>
+
+    <div id="rain"></div>
+    <div id="snow"></div>
+    <div id="petals"></div>
+    <div id="shootingStars"></div>
+    <div id="rain"></div>
+    <div id="rainbow"></div>
+
+    <script src="game.js"></script>
+
+</body>
+</html>

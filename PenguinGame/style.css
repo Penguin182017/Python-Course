@@ -1,16 +1,691 @@
 body {
-    background-color: turquoise;
-    
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #063b5c;
+
+    /* 🩵 Light blue sky */
+    background:
+        radial-gradient(circle at 20% 20%, #d9f5ff 0%, transparent 35%),
+        radial-gradient(circle at 80% 30%, #bdeeff 0%, transparent 35%),
+        radial-gradient(circle at 40% 80%, #ccefff 0%, transparent 40%),
+        linear-gradient(135deg, #dff7ff, #b9eaff, #d5f3ff);
+
+    background-size: 200% 200%;
 }
 
+
+/* 🐧 TITLE */
+
 h1 {
-    color: goldenrod;
+    color: #174b63;
+    font-size: 45px;
     text-align: center;
 }
 
+
+/* 🐧 MAIN PENGUIN BUTTON */
+
 #penguinButton {
-    background-color: turquoise;
+    font-size: 80px;
     padding: 10px;
-    font-size: xx-large;
-    border-color: turquoise;
+    background: transparent;
+    border: none;
+}
+
+
+/* 🛒 SHOP BUTTONS */
+
+button {
+    display: block;
+    margin: 12px auto;
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+    font-size: 16px;
+
+    background: white;
+
+    transition: transform 0.2s;
+}
+
+
+/* ✨ BUTTON HOVER */
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+/* ☁️ CLOUDS */
+
+.cloud {
+    position: fixed;
+
+    width: 150px;
+    height: 45px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: 50px;
+
+    z-index: -1;
+
+    animation: floatCloud 35s linear infinite;
+}
+
+
+/* ☁️ CLOUD PUFFS */
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: 50%;
+}
+
+
+.cloud::before {
+    width: 55px;
+    height: 55px;
+
+    left: 20px;
+    top: -25px;
+}
+
+
+.cloud::after {
+    width: 70px;
+    height: 70px;
+
+    right: 15px;
+    top: -35px;
+}
+
+
+/* ☁️ CLOUD POSITIONS */
+
+.cloud1 {
+    top: 12%;
+    left: 5%;
+
+    transform: scale(0.8);
+}
+
+
+.cloud2 {
+    top: 25%;
+    left: 30%;
+
+    transform: scale(1.1);
+
+    animation-delay: -10s;
+}
+
+
+.cloud3 {
+    top: 10%;
+    right: 5%;
+
+    transform: scale(0.7);
+
+    animation-delay: -20s;
+}
+
+
+.cloud4 {
+    top: 40%;
+    left: 12%;
+
+    transform: scale(0.6);
+
+    animation-delay: -5s;
+}
+
+
+.cloud5 {
+    top: 35%;
+    right: 20%;
+
+    transform: scale(0.9);
+
+    animation-delay: -15s;
+}
+
+
+.cloud6 {
+    top: 55%;
+    right: 5%;
+
+    transform: scale(0.5);
+
+    animation-delay: -25s;
+}
+
+
+/* ☁️ CLOUD MOVEMENT */
+
+@keyframes floatCloud {
+
+    from {
+        margin-left: -80px;
+    }
+
+    to {
+        margin-left: 100vw;
+    }
+
+}
+
+
+/* ☀️ SUNNY WEATHER */
+
+body.sunny {
+    background:
+        radial-gradient(circle at 20% 20%, #dff7ff, transparent 35%),
+        radial-gradient(circle at 80% 30%, #bdeeff, transparent 35%),
+        linear-gradient(135deg, #c9f1ff, #a8e3ff, #dff8ff);
+
+    background-size: 200% 200%;
+}
+
+
+/* ☀️ SUN */
+
+#sun {
+    position: fixed;
+
+    top: 60px;
+    right: 80px;
+
+    width: 100px;
+    height: 100px;
+
+    background: #fff4a3;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 30px #fff4a3,
+        0 0 70px #ffe98a;
+
+    opacity: 0;
+
+    transition: opacity 1s;
+
+    z-index: -1;
+}
+
+
+/* ☀️ SHOW SUN DURING SUNNY WEATHER */
+
+body.sunny #sun {
+    opacity: 1;
+}
+
+
+/* 🌤️ PARTLY CLOUDY */
+
+body.partly-cloudy {
+    background:
+        linear-gradient(135deg, #b8d8e8, #d9e6eb, #a9c8d8);
+
+    background-size: 200% 200%;
+}
+
+
+/* ☁️ MORE CLOUDS */
+
+body.partly-cloudy .cloud {
+    opacity: 1;
+}
+
+
+/* 🌤️ SUN FOR PARTLY CLOUDY */
+
+body.sunny #sun,
+body.partly-cloudy #sun {
+    opacity: 1;
+}
+
+body.partly-cloudy #sun {
+    opacity: 0.55;
+    transform: scale(0.85);
+}
+
+
+/* 🌅 GOLDEN HOUR */
+
+body.golden-hour {
+    background:
+        radial-gradient(circle at 75% 25%, #fff4a3 0%, transparent 25%),
+        linear-gradient(135deg, #ffd6a3, #ffb36b, #f78f70, #ffc857);
+
+    background-size: 200% 200%;
+}
+
+
+/* 🌅 GOLDEN SUN */
+
+body.golden-hour #sun {
+    opacity: 1;
+    background: #ffd95a;
+
+    box-shadow:
+        0 0 40px #ffd95a,
+        0 0 90px #ffb347;
+}
+
+
+/* 🌧️ LIGHT RAIN */
+
+body.light-rain {
+    background:
+        linear-gradient(135deg, #a9c4d4, #c5d8df, #91afc0);
+
+    background-size: 200% 200%;
+}
+
+
+/* 🌧️ DIM SUN */
+
+body.light-rain #sun {
+    opacity: 0.15;
+    transform: scale(0.8);
+}
+
+
+/* ☁️ RAIN CLOUDS */
+
+body.light-rain .cloud {
+    opacity: 0.9;
+}
+
+
+/* 🌧️ RAIN */
+
+#rain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+}
+
+body.light-rain #rain {
+    opacity: 1;
+}
+
+.raindrop {
+    position: absolute;
+    width: 2px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.7);
+    animation: rainFall 0.8s linear infinite;
+}
+
+@keyframes rainFall {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+/* 🌈 RAINBOW WEATHER */
+
+body.rainbow {
+    background:
+        linear-gradient(135deg, #9edfff, #dff8ff, #a9dcff);
+
+    background-size: 200% 200%;
+}
+
+
+/* 🌈 RAINBOW */
+
+#rainbow {
+    position: fixed;
+
+    width: 500px;
+    height: 250px;
+
+    left: 50%;
+    bottom: 8%;
+
+    transform: translateX(-50%);
+
+    border-radius: 500px 500px 0 0;
+
+    background: transparent;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    box-shadow:
+        0 -25px 0 0 #ff0000,
+        0 -50px 0 0 #ff7f00,
+        0 -75px 0 0 #ffff00,
+        0 -100px 0 0 #00c853,
+        0 -125px 0 0 #00bfff,
+        0 -150px 0 0 #2455ff,
+        0 -175px 0 0 #8b00ff;
+}
+
+body.rainbow #rainbow {
+    opacity: 0.8;
+}
+
+
+/* 🌙 CLEAR NIGHT */
+
+body.clear-night {
+    background:
+        radial-gradient(circle at 20% 20%, #304878, transparent 30%),
+        radial-gradient(circle at 80% 30%, #18294f, transparent 35%),
+        linear-gradient(135deg, #101b3d, #182b55, #263f70);
+
+    color: white;
+}
+
+
+/* 🌙 MOON */
+
+body.clear-night #sun {
+    opacity: 1;
+
+    background: #fffbd1;
+
+    box-shadow:
+        0 0 25px #fffbd1,
+        0 0 60px #dce8ff;
+
+    transform: scale(0.8);
+}
+
+
+/* ☁️ FEWER CLOUDS AT NIGHT */
+
+body.clear-night .cloud {
+    opacity: 0.25;
+}
+
+
+/* ❄️ LIGHT SNOW */
+
+body.light-snow {
+    background:
+        radial-gradient(circle at 20% 20%, #ffffff, transparent 30%),
+        radial-gradient(circle at 80% 30%, #dff5ff, transparent 35%),
+        linear-gradient(135deg, #dcecf5, #b9d7e5, #eefaff);
+
+    color: #174b63;
+}
+
+
+/* ❄️ SNOW CLOUDS */
+
+body.light-snow .cloud {
+    opacity: 0.85;
+}
+
+
+/* ❄️ HIDE SUN */
+
+body.light-snow #sun {
+    opacity: 0;
+}
+
+
+/* ❄️ SNOW */
+
+#snow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+}
+
+body.light-snow #snow {
+    opacity: 1;
+}
+
+.snowflake {
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    animation: snowFall 5s linear infinite;
+}
+
+@keyframes snowFall {
+    from {
+        transform: translateY(-30px) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+
+/* 🌸 SPRING BREEZE */
+
+body.spring-breeze {
+    background:
+        radial-gradient(circle at 20% 20%, #fff0f5, transparent 30%),
+        radial-gradient(circle at 80% 30%, #dfffe5, transparent 35%),
+        linear-gradient(135deg, #c9f7d5, #dff7ff, #ffd8e8);
+
+    background-size: 200% 200%;
+}
+
+
+/* 🌸 SPRING CLOUDS */
+
+body.spring-breeze .cloud {
+    opacity: 0.7;
+}
+
+
+/* 🌸 SOFT SUN */
+
+body.spring-breeze #sun {
+    opacity: 0.6;
+    transform: scale(0.9);
+}
+
+
+/* 🌸 SPRING PETALS */
+
+#petals {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+}
+
+body.spring-breeze #petals {
+    opacity: 1;
+}
+
+.petal {
+    position: absolute;
+    font-size: 20px;
+    animation: petalFall 6s linear infinite;
+}
+
+@keyframes petalFall {
+    from {
+        transform: translateY(-30px) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+
+/* 🌌 AURORA */
+
+body.aurora {
+    background:
+        radial-gradient(circle at 20% 30%, #5ee7b7, transparent 30%),
+        radial-gradient(circle at 80% 20%, #7b61ff, transparent 35%),
+        linear-gradient(135deg, #071b3a, #102b55, #173d5c);
+
+    color: white;
+}
+
+
+/* 🌌 AURORA GLOW */
+
+body.aurora::before {
+    content: "";
+
+    position: fixed;
+    left: -10%;
+    bottom: 20%;
+
+    width: 120%;
+    height: 180px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(70, 255, 190, 0.45),
+            rgba(120, 100, 255, 0.45),
+            transparent
+        );
+
+    filter: blur(30px);
+
+    transform: rotate(-5deg);
+
+    opacity: 0.8;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* 🌙 DIM MOON */
+
+body.aurora #sun {
+    opacity: 0.25;
+    transform: scale(0.7);
+}
+
+
+/* 🌠 SHOOTING STARS SKY */
+
+body.shooting-stars {
+    background:
+        radial-gradient(circle at 20% 20%, #293b70, transparent 30%),
+        radial-gradient(circle at 80% 30%, #18284f, transparent 35%),
+        linear-gradient(135deg, #080f2b, #172957, #101a3c);
+
+    background-size: 200% 200%;
+
+    color: white;
+}
+
+
+/* 🌠 SHOOTING STARS */
+
+#shootingStars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    display: none;
+}
+
+body.shooting-stars #shootingStars {
+    display: block;
+}
+
+.shooting-star {
+    position: absolute;
+
+    width: 120px;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        white
+    );
+
+    border-radius: 50%;
+
+    transform: rotate(25deg);
+
+    animation: shootingStar 2s linear infinite;
+}
+
+@keyframes shootingStar {
+    from {
+        transform: translate(0, 0) rotate(25deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(500px, 700px) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* ⭐ TWINKLING STARS */
+
+body.shooting-stars::before {
+    content: "✦  ·  ✧     ·     ✦   ·  ✧       ·    ✦";
+    
+    position: fixed;
+    inset: 0;
+
+    font-size: 28px;
+    letter-spacing: 35px;
+    line-height: 90px;
+
+    color: white;
+
+    opacity: 0.7;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation: starsTwinkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes starsTwinkle {
+    from {
+        opacity: 0.25;
+    }
+
+    to {
+        opacity: 0.9;
+    }
 }
