@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brave Little You | MamaFlow</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --cream: #fbf7ef;
+    --green: #e7eee5;
+    --sage: #829783;
+    --pink: #f4e1dc;
+    --dark: #30463e;
+    --text: #526159;
+    --white: #fffefa;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.8;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: #fbf7eff0;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e9e2d7;
+}
+
+.logo {
+    color: var(--dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--sage);
+}
+
+h1, h2, h3 {
+    color: var(--dark);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    margin: 18px 0;
+}
+
+h2 {
+    font-size: clamp(32px, 4vw, 48px);
+}
+
+p {
+    line-height: 1.9;
+}
+
+section {
+    padding: 85px 8%;
+}
+
+.hero {
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 55px;
+    background: linear-gradient(135deg, #e7eee5, #fbf7ef 65%, #f4e1dc);
+}
+
+.eyebrow {
+    color: #829783;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 span {
+    color: #829783;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 410px;
+    justify-self: center;
+    border-radius: 12px;
+    box-shadow: 0 24px 60px #30463e20;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 24px;
+    border: 0;
+    border-radius: 30px;
+    background: var(--dark);
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .2s, background .2s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: var(--sage);
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.section-heading p {
+    max-width: 600px;
+    margin: auto;
+}
+
+.about {
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.chapters {
+    background: var(--green);
+}
+
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid #e9e2d7;
+    border-radius: 20px;
+    background: var(--white);
+    transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px #30463e12;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.card h3 {
+    margin-bottom: 5px;
+}
+
+.full-book {
+    background: var(--cream);
+}
+
+.book-pages {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.book-page {
+    padding: 30px;
+    border: 1px solid #e9e2d7;
+    border-radius: 20px;
+    background: var(--white);
+}
+
+.book-page img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.page-label {
+    color: #b47768;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.activity {
+    background: var(--pink);
+}
+
+.activity-inner {
+    max-width: 750px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    color: var(--dark);
+    font-weight: bold;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d9cfc1;
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--dark);
+    font: inherit;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.gallery {
+    background: var(--green);
+}
+
+footer {
+    padding: 45px 20px;
+    text-align: center;
+    background: var(--dark);
+    color: white;
+}
+
+footer h2 {
+    color: white;
+}
+
+@media (max-width: 760px) {
+    header {
+        position: relative;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-image {
+        max-width: 300px;
+    }
+
+    .chapter-grid,
+    .book-pages {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">✦ MamaFlow</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#chapters">Chapters</a>
+        <a href="#read-book">Read the Book</a>
+        <a href="#activity">Activity</a>
+        <a href="#gallery">Pictures</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <div>
+        <p class="eyebrow">A LITTLE BOOK FOR BIG DREAMS</p>
+        <h1>The Brave<br><span>Little You</span></h1>
+        <h2>Small Steps, Big Dreams</h2>
+        <p>
+            A gentle journey of self-discovery, confidence,
+            feelings, and dreams. Remember that you can grow
+            at your own pace, one small step at a time.
+        </p>
+        <p><strong>Created with love by MamaFlow ♡</strong></p>
+        <a class="button" href="#chapters">Explore the Book →</a>
+    </div>
+
+    <img class="hero-image"
+         src="page-01-illustration.jpeg"
+         alt="The Brave Little You book cover">
+</section>
+
+<section id="about">
+    <div class="about">
+        <p class="eyebrow">A NOTE FOR YOU</p>
+        <h2>Every Brave Journey Begins Somewhere</h2>
+        <p>
+            You don't have to be perfect. You don't have to
+            know everything. You can learn, make mistakes,
+            ask for help, and try again.
+        </p>
+        <p>
+            This book invites you to notice your feelings,
+            explore your dreams, and discover little things
+            you can do each day.
+        </p>
+    </div>
+</section>
+
+<section class="chapters" id="chapters">
+    <div class="section-heading">
+        <p class="eyebrow">YOUR JOURNEY</p>
+        <h2>Explore the Chapters</h2>
+        <p>Take your time. Every little step counts.</p>
+    </div>
+
+    <div class="chapter-grid">
+        <article class="card">
+            <img src="page-03-illustration.jpeg"
+                 alt="Be Present illustration">
+            <h3>01. Be Present</h3>
+            <p>Slow down and notice the world around you.</p>
+        </article>
+
+        <article class="card">
+            <img src="page-04-illustration.jpeg"
+                 alt="Feel Your Feelings illustration">
+            <h3>02. Feel Your Feelings</h3>
+            <p>Your feelings matter. Learn to notice them kindly.</p>
+        </article>
+
+        <article class="card">
+            <img src="page-05-illustration.jpeg"
+                 alt="Meet Your Future Self illustration">
+            <h3>03. Meet Your Future Self</h3>
+            <p>Imagine what you might learn and become.</p>
+        </article>
+
+        <article class="card">
+            <h3>04. Take Small Actions</h3>
+            <p>Break a big dream into little steps you can take.</p>
+        </article>
+
+        <article class="card">
+            <img src="page-06-illustration.jpeg"
+                 alt="Be Kind to Yourself illustration">
+            <h3>05. Be Kind to Yourself</h3>
+            <p>Speak to yourself with patience and kindness.</p>
+        </article>
+
+        <article class="card">
+            <img src="page-07-illustration.jpeg"
+                 alt="Build Your Dreams illustration">
+            <h3>06. Build Your Dreams</h3>
+            <p>Explore your interests and make a little plan.</p>
+        </article>
+
+        <article class="card">
+            <img src="page-08-illustration.jpeg"
+                 alt="Keep Going illustration">
+            <h3>07. Keep Going</h3>
+            <p>Rest when you need to, then decide on your next step.</p>
+        </article>
+    </div>
+</section>
+
+<section class="full-book" id="read-book">
+    <div class="section-heading">
+        <p class="eyebrow">READ AND REFLECT</p>
+        <h2>The Brave Little You</h2>
+        <p>Read a little, think a little, and grow at your own pace.</p>
+    </div>
+
+    <div class="book-pages">
+        <article class="book-page">
+            <p class="page-label">WELCOME</p>
+            <img src="page-02-illustration.jpeg"
+                 alt="Hello, Brave Dreamer illustration">
+            <h3>Hello, Brave Dreamer!</h3>
+            <p>
+                This book is for you. You do not have to be
+                perfect, fearless, or good at everything.
+                You only have to be you.
+            </p>
+            <p>
+                Inside, you will try little activities that
+                help you notice the present moment, understand
+                your feelings, imagine what matters to you,
+                and choose one helpful next step.
+            </p>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">CHAPTER 1</p>
+            <img src="page-03-illustration.jpeg"
+                 alt="Be Present illustration">
+            <h3>Be Present</h3>
+            <p>
+                Pause for a moment. Notice where you are.
+                Feel your feet on the floor. Listen for one
+                sound nearby.
+            </p>
+            <p>
+                Take a slow breath in, then let it out gently.
+                You do not need to make every thought disappear.
+                Just notice what is happening right now.
+            </p>
+            <p><strong>Try it:</strong> Name three things you can
+               see, two things you can hear, and one feeling
+               you notice.</p>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">CHAPTER 2</p>
+            <img src="page-04-illustration.jpeg"
+                 alt="Feel Your Feelings illustration">
+            <h3>Feel Your Feelings</h3>
+            <p>
+                Feelings are messages, not mistakes. You might
+                feel happy, worried, sad, cross, excited,
+                or all mixed up.
+            </p>
+            <p>
+                You do not have to pretend to feel fine.
+                Name the feeling and ask yourself what might
+                help you right now.
+            </p>
+            <p><strong>Try it:</strong> What am I feeling?
+               What do I need? What kind thing can I do next?</p>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">CHAPTER 3</p>
+            <img src="page-05-illustration.jpeg"
+                 alt="Meet Your Future Self illustration">
+            <h3>Meet Your Future Self</h3>
+            <p>
+                Imagine yourself learning something you care
+                about. What might you be able to do after
+                practising for a while?
+            </p>
+            <p>
+                Picture the effort, not only the prize.
+                You might ask questions, try again, read,
+                build, draw, or work with a team.
+            </p>
+            <p><strong>Try it:</strong> Write or draw something
+               you want to learn and one skill you can practise.</p>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">CHAPTER 4</p>
+            <h3>Take Small Actions</h3>
+            <p>
+                Big dreams can feel far away. That is okay.
+                You do not need to finish everything today.
+            </p>
+            <p>
+                Break a goal into tiny steps. If you want
+                to write a story, you could write one
+                character's name today.
+            </p>
+            <p><strong>Try it:</strong> Write your goal,
+               one tiny step you can do today, and someone
+               who can help you.</p>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">CHAPTER 5</p>
+            <img src="page-06-illustration.jpeg"
+                 alt="Be Kind to Yourself illustration">
+            <h3>Be Kind to Yourself</h3>
+            <p>
+                Everyone makes mistakes. Mistakes can show
+                you what to practise next.
+            </p>
+            <p>
+                Talk to yourself as you would talk to a friend.
+                Instead of saying, "I am terrible at this,"
+                try, "I am still learning."
+            </p>
+            <p><strong>Try it:</strong> Write one kind thing
+               you can tell yourself when something is hard.</p>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">CHAPTER 6</p>
+            <img src="page-07-illustration.jpeg"
+                 alt="Build Your Dreams illustration">
+            <h3>Build Your Dreams</h3>
+            <p>
+                It is wonderful to have dreams. You might want
+                to become an artist, scientist, athlete,
+                builder, teacher, or game designer.
+            </p>
+            <p>
+                You do not have to pick one dream forever.
+                Curiosity helps you explore.
+            </p>
+            <p><strong>Try it:</strong> Choose something you
+               would love to try and one thing you can do
+               this week.</p>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">CHAPTER 7</p>
+            <img src="page-08-illustration.jpeg"
+                 alt="Keep Going illustration">
+            <h3>Keep Going</h3>
+            <p>
+                Sometimes progress feels slow. Sometimes
+                you will need a rest, a new idea, or help
+                from someone you trust.
+            </p>
+            <p>
+                Courage does not mean never feeling scared.
+                It can mean taking a small step while feeling
+                nervous—or deciding to pause and try later.
+            </p>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">DREAM JOURNAL</p>
+            <img src="page-10-illustration.jpeg"
+                 alt="Dream Journal illustration">
+            <h3>My Dream Journal</h3>
+            <p>Draw or write your ideas. There are no perfect answers.</p>
+            <p>Something I want to learn:</p>
+            <textarea placeholder="Write or draw your idea..."></textarea>
+            <p>A place I would love to visit:</p>
+            <textarea placeholder="Imagine your adventure..."></textarea>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">REMEMBER</p>
+            <img src="page-11-illustration.jpeg"
+                 alt="Words to Remember illustration">
+            <h3>Words to Remember</h3>
+            <p>★ I am learning, one step at a time.</p>
+            <p>★ My feelings matter, and I can ask for help.</p>
+            <p>★ I can be brave and still feel nervous.</p>
+            <p>★ Mistakes help me discover what to try next.</p>
+            <p>★ I can dream big and start small.</p>
+            <p>★ I do not have to be perfect to be proud of myself.</p>
+        </article>
+
+        <article class="book-page">
+            <p class="page-label">CLOSING NOTE</p>
+            <img src="page-13-illustration.jpeg"
+                 alt="You Can Do It illustration">
+            <h3>You Can Do It</h3>
+            <p>
+                Big dreams do not need a perfect beginning.
+                They need curiosity, kindness, support,
+                and small steps.
+            </p>
+            <p>
+                Keep being you. The world is better when
+                you bring your own ideas, care, and courage
+                into it.
+            </p>
+            <p><strong>With care, MamaFlow ♡</strong></p>
+        </article>
+    </div>
+</section>
+
+<section class="activity" id="activity">
+    <div class="activity-inner">
+        <p class="eyebrow">A MOMENT FOR YOU</p>
+        <h2>Your Little Reflection</h2>
+        <p>Take a moment to notice what is around you.</p>
+
+        <label for="see">Three things I can see...</label>
+        <textarea id="see"></textarea>
+
+        <label for="hear">Two things I can hear...</label>
+        <textarea id="hear"></textarea>
+
+        <label for="feel">Right now, I feel...</label>
+        <textarea id="feel"></textarea>
+
+        <button class="button" id="finish">
+            Finish My Reflection ♡
+        </button>
+
+        <p id="message" aria-live="polite"></p>
+    </div>
+</section>
+
+<section class="gallery" id="gallery">
+    <div class="section-heading">
+        <p class="eyebrow">A LOOK INSIDE</p>
+        <h2>The Picture Gallery</h2>
+        <p>Explore the original illustrations from the book.</p>
+    </div>
+
+    <div class="chapter-grid">
+        <article class="card">
+            <img src="page-01-illustration.jpeg" alt="Book cover">
+            <h3>The Book Cover</h3>
+        </article>
+        <article class="card">
+            <img src="page-02-illustration.jpeg" alt="Welcome illustration">
+            <h3>Hello, Brave Dreamer</h3>
+        </article>
+        <article class="card">
+            <img src="page-03-illustration.jpeg" alt="Be Present">
+            <h3>Be Present</h3>
+        </article>
+        <article class="card">
+            <img src="page-04-illustration.jpeg" alt="Feel Your Feelings">
+            <h3>Feel Your Feelings</h3>
+        </article>
+        <article class="card">
+            <img src="page-05-illustration.jpeg" alt="Meet Your Future Self">
+            <h3>Meet Your Future Self</h3>
+        </article>
+        <article class="card">
+            <img src="page-06-illustration.jpeg" alt="Be Kind to Yourself">
+            <h3>Be Kind to Yourself</h3>
+        </article>
+        <article class="card">
+            <img src="page-07-illustration.jpeg" alt="Build Your Dreams">
+            <h3>Build Your Dreams</h3>
+        </article>
+        <article class="card">
+            <img src="page-08-illustration.jpeg" alt="Keep Going">
+            <h3>Keep Going</h3>
+        </article>
+        <article class="card">
+            <img src="page-09-illustration.jpeg" alt="Ninth illustration">
+            <h3>Illustration 9</h3>
+        </article>
+        <article class="card">
+            <img src="page-10-illustration.jpeg" alt="Dream Journal">
+            <h3>My Dream Journal</h3>
+        </article>
+        <article class="card">
+            <img src="page-11-illustration.jpeg" alt="Eleventh illustration">
+            <h3>Illustration 11</h3>
+        </article>
+        <article class="card">
+            <img src="page-12-illustration.jpeg" alt="Twelfth illustration">
+            <h3>Illustration 12</h3>
+        </article>
+        <article class="card">
+            <img src="page-13-illustration.jpeg" alt="Closing illustration">
+            <h3>You Can Do It</h3>
+        </article>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <h2>The Brave Little You</h2>
+    <p>Small Steps, Big Dreams ♡</p>
+    <p>Made with love by MamaFlow</p>
+</footer>
+
+<script>
+const finishButton = document.getElementById("finish");
+
+finishButton.addEventListener("click", function () {
+    const fields = ["see", "hear", "feel"];
+
+    const hasAnswers = fields.some(function (id) {
+        return document.getElementById(id).value.trim() !== "";
+    });
+
+    document.getElementById("message").textContent = hasAnswers
+        ? "Lovely work! Thank yourself for taking this little moment. ♡"
+        : "Write a little thought first, brave dreamer!";
+});
+</script>
+
+</body>
+</html>
